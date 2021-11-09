@@ -1,0 +1,228 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Spartan", sans-serif;
+}
+:root {
+  --DesaturatedDarkCyan: hsl(180, 29%, 50%);
+  --LightGrayishCyan_Background: hsl(180, 52%, 96%);
+  --LightGrayishCyan_FilterTablets: hsl(180, 31%, 95%);
+  --DarkGrayishCyan: hsl(180, 8%, 52%);
+  --VeryDarkGrayishCyan: hsl(180, 14%, 20%);
+}
+body {
+  background-color: var(--LightGrayishCyan_Background);
+}
+header {
+  background-color: var(--DesaturatedDarkCyan);
+  background-image: url(images/bg-header-mobile.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 30vh;
+}
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+  width: 80%;
+}
+.filter-container {
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  margin: 10px 0;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  border-radius: 6px;
+}
+.tags-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  margin-top: 0;
+}
+.tags {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 25px;
+  margin: 10px 10px;
+  background-color: var(--LightGrayishCyan_Background);
+}
+.tags p {
+  font-weight: 700;
+  font-size: 12px;
+  color: var(--DesaturatedDarkCyan);
+  padding: 0 6px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.remove-btn {
+  height: 100%;
+}
+.remove-btn::after {
+  content: url(images/icon-remove.svg);
+  background-color: var(--DesaturatedDarkCyan);
+  height: 100%;
+  padding: 0 6px;
+  display: flex;
+  align-items: center;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  cursor: pointer;
+}
+.remove-btn:hover::after {
+  background-color: var(--VeryDarkGrayishCyan);
+}
+.clear-tags {
+  color: var(--DesaturatedDarkCyan);
+  font-size: 12px;
+  cursor: pointer;
+}
+.clear-tags:hover {
+  text-decoration: underline;
+}
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 350px;
+  background-color: white;
+  margin: 20px 0;
+  padding: 0 20px;
+  border-radius: 10px;
+  position: relative;
+}
+.profile:first-child,
+.profile:nth-child(2) {
+  border-left: 6px solid var(--DesaturatedDarkCyan);
+}
+.content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.logo {
+  width: 60px;
+  position: absolute;
+  top: -1.6rem;
+}
+.logo img {
+  width: 100%;
+}
+.text-top {
+  display: flex;
+  align-items: center;
+}
+.text-top p {
+  color: var(--DesaturatedDarkCyan);
+  font-weight: 700;
+  font-size: 15px;
+  margin-right: 15px;
+}
+.featured,
+.new {
+  border-radius: 55px;
+  color: white;
+  padding: 6px 10px;
+  margin-left: 10px;
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.new {
+  background-color: var(--DesaturatedDarkCyan);
+}
+.featured {
+  background-color: var(--VeryDarkGrayishCyan);
+}
+.text-center {
+  margin: 15px 0;
+  color: var(--DarkGrayishCyan);
+  font-size: 13px;
+  cursor: pointer;
+}
+.text-center:hover {
+  color: var(--DesaturatedDarkCyan);
+}
+ul {
+  display: flex;
+}
+ul li:first-child {
+  list-style: none;
+}
+ul li {
+  margin: 0 30px 0 0;
+  color: var(--DarkGrayishCyan);
+  font-size: 13px;
+}
+hr {
+  width: 100%;
+  border: 1px solid var(--DarkGrayishCyan);
+  margin: 30px 0 10px 0;
+}
+.filters {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.filters p {
+  color: var(--DesaturatedDarkCyan);
+  background-color: var(--LightGrayishCyan_FilterTablets);
+  margin: 15px 10px 0 0px;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.filters p:hover {
+  background-color: var(--DesaturatedDarkCyan);
+  color: white;
+}
+@media (min-width: 900px) {
+  header {
+    background-image: url(images/bg-header-desktop.svg);
+  }
+  .container {
+    width: 80%;
+  }
+  .profile {
+    flex-direction: row;
+    height: 160px;
+  }
+  .content {
+    flex-direction: row;
+    width: 50%;
+  }
+  .filters {
+    width: 55%;
+    justify-content: flex-end;
+  }
+  .logo {
+    position: relative;
+    top: 0;
+    width: 90px;
+  }
+  .text {
+    margin-left: 30px;
+  }
+  hr {
+    display: none;
+  }
+}
